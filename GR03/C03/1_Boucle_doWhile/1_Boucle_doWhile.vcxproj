@@ -20,10 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{5B93256F-7657-4D79-B843-E10C1E4D8DAB}</ProjectGuid>
-    <RootNamespace>SommeEntiers</RootNamespace>
+    <ProjectGuid>{A8E2D85F-22BB-4A8D-897B-8B684CDC8B52}</ProjectGuid>
+    <RootNamespace>My1BoucledoWhile</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>0_SommeEntiers</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
