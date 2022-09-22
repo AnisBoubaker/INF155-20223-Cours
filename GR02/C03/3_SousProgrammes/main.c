@@ -37,19 +37,55 @@ int saisir_entier_positif(void)
 	return saisie; 
 }
 
+int nombre_combinaisons(int n, int k)
+{
+	int resultat; 
+	
+	resultat = factorielle(n) / (factorielle(k) * factorielle(n - k));
+
+	return resultat;
+}
+
+void bienvenue(void)
+{
+	printf("***********************************************\n");
+	printf("*     SUPER CALCULATEUR DE COMBINAISONS       *\n");
+	printf("***********************************************\n");
+	
+	//Ce return est optionnel et ne sert pas à grand chose. 
+	return;
+}
+
 
 int main(void)
 {
-	int valeur; 
+	int nb_boules; 
+	int nb_tirees; 
+	int nb_combinaisons; 
+
+	bienvenue();
+
+	printf("Saisir le nombre total de boules: \n");
+	nb_boules = saisir_entier_positif();
+
+	printf("Saisir le nombre de boules tirees: \n");
+	nb_tirees = saisir_entier_positif();
+
+	nb_combinaisons = nombre_combinaisons(nb_boules, nb_tirees);
+
+
+	printf("Le nombre de combinaisons de %d parmi %d est: %d\n", nb_tirees, nb_boules, nb_combinaisons);
+
+
+	/*int valeur; 
 	int resultat; 
 
 	printf("Saisir la valeur pour la factorielle: \n");
-	//scanf("%d", &valeur);
 	valeur = saisir_entier_positif();
 
 	resultat = factorielle(valeur);
 
-	printf("La factorielle de %d est: %d\n", valeur, resultat);
+	printf("La factorielle de %d est: %d\n", valeur, resultat);*/
 
 
 	//int total; //Nombre total de boules dans l'urne
