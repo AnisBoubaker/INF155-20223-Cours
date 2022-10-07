@@ -8,6 +8,7 @@ int main(void)
 	//Taille du tableau: absolument une valeur numérique entière
 	//positive
 	double produits[1000];
+	double moyenne; 
 
 	int nb_produits=0; //Taille effective du tableau produits
 
@@ -26,6 +27,18 @@ int main(void)
 		printf("%lf | ", produits[i]);
 	}
 	printf("\n");
+
+	moyenne = 0; 
+	for (int i = 0; i < nb_produits; i++)
+	{
+		//moyenne = moyenne + produits[i];
+		moyenne += produits[i];
+	}
+	//moyenne = moyenne / nb_produits;
+	moyenne /= nb_produits;
+
+	printf("La moyenne des prix est: %lf\n", moyenne);
+
 
 	/*
 	produits[2] = 25.50;
