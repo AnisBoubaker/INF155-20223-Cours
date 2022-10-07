@@ -2,6 +2,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+double somme_tableau(const double tab[], int nb_elts)
+{
+	double somme = 0;
+	for (int i = 0; i < nb_elts; i++)
+	{
+		somme += tab[i];
+	}
+	return somme;
+}
+
+void afficher_tableau(const double tab[], int nb_elts)
+{
+	for (int i=0; i < nb_elts; i++)
+	{
+		printf("Case %d: %lf\n", i, tab[i]);
+		//La modification du tableau est interdite du fait que le paramètre
+		//tab est const. On ne peut donc pas faire ceci: 
+		//tab[i] = 0;
+	}
+}
+
+/*
+fonction saisir_tableau qui demande à l'usager de saisir 
+une valeur pour chacune des cases du tableau (pour un nombre
+de cases déterminé).
+*/
+void saisir_tableau(double tab[],  int nb_elts)
+{
+	for (int i = 0; i < nb_elts; i++)
+	{
+		printf("Saisir la valeur pour la case %d: ", i);
+		scanf("%lf", &tab[i]);
+	}
+	/*
+	Ne jamais retourner un tableau depuis une fonction
+	car un tableau déclaré dans une fonction cesse d'exister
+	dès	qu'on quitte la fonction.
+	*/
+}
+
+
+
 int main(void)
 {
 	double produits[100];
@@ -14,16 +56,17 @@ int main(void)
 		scanf("%d", &nb_produits);
 	} while (nb_produits > 100 || nb_produits <= 0);
 
-	for (int i=0; i<nb_produits; i++ )
+	saisir_tableau(produits, nb_produits);
+	/*for (int i=0; i<nb_produits; i++ )
 	{
 		printf("Prix du produit %d: ", i);
 		scanf("%lf", &produits[i]);
-	}
+	}*/
 	
-	for (int i = 0; i < nb_produits; i++)
-	{
-		somme += produits[i];
-	}
+	afficher_tableau(produits, nb_produits);
+
+	//ATTENTION: On ne doit mettre que le nom du tableau, pas de crochets!!
+	somme = somme_tableau(produits, nb_produits);
 
 	printf("La moyenne des prix est: %lf\n", somme / nb_produits);
 
