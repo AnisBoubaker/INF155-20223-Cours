@@ -3,6 +3,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/*
+Le mot clé const veut dire que le tableau tab est en lecture seule
+dans la fonction.
+*/
+void afficher_tab(const double tab[], int nb_elts)
+{
+	for (int i = 0; i < nb_elts; i++)
+	{
+		printf("Case %d: %lf\n", i, tab[i]);
+	}
+}
+
+
+double moyenne_tab(const double tab[], int nb_elts)
+{
+	double moyenne = 0;
+	for (int i = 0; i < nb_elts; i++)
+	{
+		moyenne += tab[i];
+	}
+	moyenne /= nb_elts;
+
+	return moyenne;
+}
+
+// ATTENTION : NE JAMAIS RETOURNER UN TABLEAU CRÉÉ DANS UNE 
+// FONCTION!
+/*
+??? saisir_tab_nono(int nb_elts)
+{
+	double tab[1000];
+	for (int i = 0; i < nb_elts; i++)
+	{
+		printf("Prix du produit %d: ", i);
+		scanf("%lf", &tab[i]);
+	}
+	return tab;
+}*/
+
+
+void saisir_tab(double tab[], int nb_elts)
+{
+	for (int i = 0; i < nb_elts; i++)
+	{
+		printf("Prix du produit %d: ", i);
+		scanf("%lf", &tab[i]);
+	}
+}
+
 int main(void)
 {
 	//Taille du tableau: absolument une valeur numérique entière
@@ -15,27 +65,33 @@ int main(void)
 	printf("Combien de produits avez-vous? ");
 	scanf("%d", &nb_produits);
 
-	for (int i = 0; i < nb_produits; i++)
+	/*for (int i = 0; i < nb_produits; i++)
 	{
 		printf("Saisir le prix du produit %d: ", i);
 		scanf("%lf", &produits[i]);
-	}
+	}*/
+	saisir_tab(produits, nb_produits);
 
-	for (int i = 0; i < nb_produits; i++)
+	/*for (int i = 0; i < nb_produits; i++)
 	{
 		//printf("Produit %d: %lf\n", i, produits[i]);
 		printf("%lf | ", produits[i]);
 	}
-	printf("\n");
+	printf("\n");*/
+	afficher_tab(produits, nb_produits);
 
-	moyenne = 0; 
+	/*moyenne = 0; 
 	for (int i = 0; i < nb_produits; i++)
 	{
 		//moyenne = moyenne + produits[i];
 		moyenne += produits[i];
 	}
 	//moyenne = moyenne / nb_produits;
-	moyenne /= nb_produits;
+	moyenne /= nb_produits;*/
+
+	//ATTENTION: Quand on passe un tableau en paramètre
+	//on ne met que son identifiant (pas de crochets!!)
+	moyenne = moyenne_tab(produits, nb_produits);
 
 	printf("La moyenne des prix est: %lf\n", moyenne);
 
