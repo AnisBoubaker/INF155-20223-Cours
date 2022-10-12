@@ -6,7 +6,7 @@
 
 
 void afficher_tab(const int tab[], int taille);
-void tri_insertion(int tab[], int taille);
+void tri_insertion_croissant(int tab[], int taille);
 
 int main(void)
 {
@@ -21,7 +21,7 @@ int main(void)
 }
 
 
-void tri_insertion(int tab[], int taille)
+void tri_insertion_croissant(int tab[], int taille)
 {
 	int i, j, x;
 

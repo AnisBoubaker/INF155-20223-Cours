@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "0_Exercice_Tableaux", "0_Ex
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_Tab2d", "01_Tab2d\01_Tab2d.vcxproj", "{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2_Algos_Tri", "2_Algos_Tri\2_Algos_Tri.vcxproj", "{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x64.Build.0 = Release|x64
 		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x86.ActiveCfg = Release|Win32
 		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x86.Build.0 = Release|Win32
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Debug|x64.ActiveCfg = Debug|x64
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Debug|x64.Build.0 = Debug|x64
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Debug|x86.ActiveCfg = Debug|Win32
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Debug|x86.Build.0 = Debug|Win32
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Release|x64.ActiveCfg = Release|x64
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Release|x64.Build.0 = Release|x64
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Release|x86.ActiveCfg = Release|Win32
+		{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

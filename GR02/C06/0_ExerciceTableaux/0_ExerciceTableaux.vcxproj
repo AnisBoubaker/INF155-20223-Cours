@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}</ProjectGuid>
-    <RootNamespace>My2AlgosTri</RootNamespace>
+    <ProjectGuid>{E1A9CA70-4AFC-4D62-AD75-DB5EBAF50BF3}</ProjectGuid>
+    <RootNamespace>My0ExerciceTableaux</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
