@@ -4,11 +4,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-
-#define MAX_LIGNES 100
-#define MAX_COLONNES 50
-
-void afficher_tab2d(int tab[][MAX_COLONNES], int nb_lignes, int nb_colonnes);
+#include "mod_tab2d.h"
 
 
 int main(void)
@@ -27,20 +23,15 @@ int main(void)
 		}
 		printf("\n");
 	}*/
+	printf("Avant de doubler: \n");
+	afficher_tab2d(tab2d, 4, 5);
+
+	doubler_valeurs_tab2d(tab2d, 4, 5);
+
+	printf("Apres avoir double: \n");
 	afficher_tab2d(tab2d, 4, 5);
 
 	system("pause");
 	return EXIT_SUCCESS;
 }
 
-void afficher_tab2d(int tab[][MAX_COLONNES], int nb_lignes, int nb_colonnes)
-{
-	for (int ligne = 0; ligne < nb_lignes; ligne++)
-	{
-		for (int colonne = 0; colonne < nb_colonnes; colonne++)
-		{
-			printf("%d\t", tab[ligne][colonne]);
-		}
-		printf("\n");
-	}
-}

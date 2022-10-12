@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}</ProjectGuid>
-    <RootNamespace>My01Tab2d</RootNamespace>
+    <ProjectGuid>{1B9196F5-5D69-42E5-8261-CA0057B9F4D7}</ProjectGuid>
+    <RootNamespace>My2AlgosTri</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
-    <ClCompile Include="mod_tab2d.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="mod_tab2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
