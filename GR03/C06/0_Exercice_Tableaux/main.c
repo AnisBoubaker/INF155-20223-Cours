@@ -22,6 +22,7 @@ int trouver_val(int tab[], int nb_elts, int valeur, int* position);
 int main(void)
 {
 	int mon_tab[TAILLE_MAX] = {10, 20, 35, 12, 8, 7};
+	int autre_tab[50] = {0};
 	int position; 
 	/*mon_tab[0] = 10; 
 	mon_tab[1] = 20;

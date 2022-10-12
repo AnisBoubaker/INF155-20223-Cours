@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "0_Exercice_Tableaux", "0_Exercice_Tableaux\0_Exercice_Tableaux.vcxproj", "{FEA863A5-8F20-4E70-AFDD-A26455F910A5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_Tab2d", "01_Tab2d\01_Tab2d.vcxproj", "{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{FEA863A5-8F20-4E70-AFDD-A26455F910A5}.Release|x64.Build.0 = Release|x64
 		{FEA863A5-8F20-4E70-AFDD-A26455F910A5}.Release|x86.ActiveCfg = Release|Win32
 		{FEA863A5-8F20-4E70-AFDD-A26455F910A5}.Release|x86.Build.0 = Release|Win32
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Debug|x64.ActiveCfg = Debug|x64
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Debug|x64.Build.0 = Debug|x64
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Debug|x86.ActiveCfg = Debug|Win32
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Debug|x86.Build.0 = Debug|Win32
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x64.ActiveCfg = Release|x64
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x64.Build.0 = Release|x64
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x86.ActiveCfg = Release|Win32
+		{BFBA5005-5B74-450C-B1C3-3C3940EEB2AA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
