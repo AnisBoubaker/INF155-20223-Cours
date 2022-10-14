@@ -1,16 +1,10 @@
+
+
 #include <stdio.h>
 #include <stdlib.h>
+#include "mod_tab2d.h"
 
 
-#define NB_MAX_LIGNES 100
-#define NB_MAX_COLONNES 100
-
-
-void afficher_tab2d(double tab[][NB_MAX_COLONNES],
-	int nb_lignes, int nb_colonnes);
-
-void convertir_fahreneith(double temps[][NB_MAX_COLONNES],
-	int nb_lignes, int nb_colonnes);
 
 int main(void)
 {
@@ -55,30 +49,3 @@ int main(void)
 	return 0;
 }
 
-
-
-void afficher_tab2d(const double tab[][NB_MAX_COLONNES],
-	int nb_lignes, int nb_colonnes)
-{
-	for(int i = 0; i < nb_lignes; i++)
-	{
-		for (int j = 0; j < nb_colonnes; j++)
-		{
-			printf("%.2lf\t", tab[i][j]);
-		}
-		printf("\n");
-	}
-}
-
-void convertir_fahreneith(double temps[][NB_MAX_COLONNES],
-	int nb_lignes, int nb_colonnes
-	)
-{
-	for (int i = 0; i < nb_lignes; i++)
-	{
-		for (int j = 0; j < nb_colonnes; j++)
-		{
-			temps[i][j] = temps[i][j] * 1.8 + 32;
-		}
-	}
-}
