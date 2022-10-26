@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "0_ExerciceTableaux", "0_Exe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1_Tableaux2D", "1_Tableaux2D\1_Tableaux2D.vcxproj", "{70E28B1B-D14F-4A90-BA1A-18C51BE952FF}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2_Tri", "2_Tri\2_Tri.vcxproj", "{9BCEE766-15E0-4171-AD34-414241859DC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{70E28B1B-D14F-4A90-BA1A-18C51BE952FF}.Release|x64.Build.0 = Release|x64
 		{70E28B1B-D14F-4A90-BA1A-18C51BE952FF}.Release|x86.ActiveCfg = Release|Win32
 		{70E28B1B-D14F-4A90-BA1A-18C51BE952FF}.Release|x86.Build.0 = Release|Win32
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Debug|x64.ActiveCfg = Debug|x64
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Debug|x64.Build.0 = Debug|x64
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Debug|x86.ActiveCfg = Debug|Win32
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Debug|x86.Build.0 = Debug|Win32
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Release|x64.ActiveCfg = Release|x64
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Release|x64.Build.0 = Release|x64
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Release|x86.ActiveCfg = Release|Win32
+		{9BCEE766-15E0-4171-AD34-414241859DC6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
