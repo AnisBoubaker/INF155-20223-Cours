@@ -7,14 +7,16 @@
 #define TAILLE_MAX_NOM 100
 #define TAILLE_MAX_CPERM 15
 
+#define FFLUSH() do{} while (getchar()!='\n')
+
 //On définit le type etudiant
 typedef struct etudiant
 {
-	char nom[TAILLE_MAX_NOM]; 
+	char nom[TAILLE_MAX_NOM];
 	char prenom[TAILLE_MAX_NOM];
 	char code_perm[TAILLE_MAX_CPERM];
-	double tp1; 
-	double tp2; 
+	double tp1;
+	double tp2;
 	double intra;
 	double finale;
 } t_etudiant;
@@ -30,46 +32,36 @@ void etudiant_saisir(t_etudiant* et);
 
 int main(void)
 {
-	//struct etudiant marie;
-	t_etudiant marie; 
-	struct etudiant marc; 
-	t_etudiant jean;
+	t_etudiant inf155_gr2[50];
+	int nb_etudiants; 
 
-	strcpy(marie.nom ,  "Laforest");
-	strcpy(marie.prenom , "Marie");
-	strcpy(marie.code_perm , "LAFM19990610");
-	marie.tp1 = 85;
-	marie.tp2 = 80;
-	marie.intra = 90;
-	marie.finale = 95;
+	printf("La taille du tableau: %d\n", sizeof(inf155_gr2));
 
-	printf("La taille en memoire occupee par marie: %d\n", sizeof(marie));
+	printf("Combien d'etudiants: ");
+	scanf("%d", &nb_etudiants);
+	FFLUSH();
 
-	/*printf("Fiche de l'etudiant-e:\n");
-	printf("Nom: %s\n", marie.nom);
-	printf("Prenom: %s\n", marie.prenom);
-	printf("Code Permanent: %s\n", marie.code_perm);
-	printf("TP1: %.2lf\n", marie.tp1);
-	printf("TP2: %.2lf\n", marie.tp2);
-	printf("Intra: %.2lf\n", marie.intra);
-	printf("Final: %.2lf\n", marie.finale);*/
+	for (int i = 0; i < nb_etudiants; i++)
+	{
+		printf("Saisie de l'etudiant %d: \n", i);
+		etudiant_saisir(&inf155_gr2[i]);
+	}
 
-	etudiant_afficher(&marie);
+	for (int i = 0; i < nb_etudiants; i++)
+	{
+		printf("Fiche de l'etudiant %d: \n", i);
+		etudiant_afficher(&inf155_gr2[i]);
+	}
 
-	//Afficher 0 si en réalité marie a été envoyée à la fonction en tant que pointeur
-	//Afficher 95 si la fonction a créé une copie de marie et le 0 a été affecté à la copie
-	printf("La note de l'examen final est: %.2lf\n", marie.finale);
 
-	etudiant_saisir(&jean);
 
-	etudiant_afficher(&jean);
 
 	system("pause");
 	return EXIT_SUCCESS;
 }
 
 
-void etudiant_afficher(const t_etudiant* et )
+void etudiant_afficher(const t_etudiant* et)
 {
 	printf("Fiche de l'etudiant-e:\n");
 	printf("Nom: %s\n", et->nom);
@@ -84,9 +76,9 @@ void etudiant_afficher(const t_etudiant* et )
 }
 
 /*
-Écrire la fonction etudiant_saisir qui demande à l'usager de saisir 
+Écrire la fonction etudiant_saisir qui demande à l'usager de saisir
 les informations d'un-e étudiant-e et qui stocke les informations saisies dans
-la référence vers'l'étudiant reçue en paramètre. 
+la référence vers'l'étudiant reçue en paramètre.
 
 void etudiant_saisir(t_etudiant* et);
 */
@@ -105,16 +97,19 @@ void etudiant_saisir(t_etudiant* et)
 	et->code_perm[strlen(et->code_perm) - 1] = '\0';
 
 	printf("TP1: ");
-	scanf("%lf", &(et->tp1) );
+	scanf("%lf", &(et->tp1));
+	FFLUSH();
 
 	printf("TP2: ");
 	scanf("%lf", &(et->tp2));
+	FFLUSH();
 
 	printf("Intra: ");
 	scanf("%lf", &(et->intra));
+	FFLUSH();
 
 	printf("Final: ");
 	scanf("%lf", &(et->finale));
-
+	FFLUSH();
 
 }
