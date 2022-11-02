@@ -7,11 +7,14 @@
 - On définit le type struct etudiant (qui contient le nom, prenom, tpq, etc.)
 - Dans la même opération on renomme struct etudiant en t_etudiant
 */
+#define TAILLE_MAX_NOM 100
+#define TAILLE_MAX_CODE_PERM 13
+
 typedef struct etudiant 
 {
-	char nom[100]; 
-	char prenom[100];
-	char code_perm[100];
+	char nom[TAILLE_MAX_NOM]; 
+	char prenom[TAILLE_MAX_NOM];
+	char code_perm[TAILLE_MAX_CODE_PERM];
 	double tp1; 
 	double tp2; 
 	double intra;
@@ -72,4 +75,27 @@ void etudiant_afficher(const t_etudiant* et)
 	printf("Final: %.2lf\n", (*et).finale);
 	//Plus possible car et est const
 	//(*et).finale = 0;
+}
+
+/*
+Écrire la fonction etudiant_saisir qui reçoit un 
+etudiant et qui demande à l'usager de saisir chacun de ses champs
+
+void etudiant_saisir(t_etudiant* et);
+
+*/
+
+void etudiant_saisir(t_etudiant* et)
+{
+	printf("Nom: ");
+	fgets(et->nom, )
+
+	printf("TP1: ");
+	scanf("%lf", &(et->tp1));
+	printf("TP2: ");
+	scanf("%lf", &(et->tp2));
+	printf("Intra: ");
+	scanf("%lf", &(et->intra));
+	printf("Final: ");
+	scanf("%lf", &(et->finale));
 }
