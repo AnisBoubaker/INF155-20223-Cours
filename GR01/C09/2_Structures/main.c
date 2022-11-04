@@ -21,6 +21,12 @@ typedef struct etudiant
 
 //typedef struct etudiant t_etudiant;
 
+
+/*
+Déclarations de fonctions
+*/
+void etudiant_afficher(const t_etudiant* et);
+
 int main(void)
 {
 	t_etudiant marie;
@@ -37,18 +43,46 @@ int main(void)
 	marie.intra = 90;
 	marie.finale = 87;
 
-	printf("**** FICHE DE L'ETUDIANT-E ****\n");
+	/*printf("**** FICHE DE L'ETUDIANT-E ****\n");
 	printf("Nom: %s\n", marie.nom);
 	printf("Prenom: %s\n", marie.prenom);
 	printf("Code permanent: %s\n", marie.code_perm);
 	printf("TP1: %lf\n", marie.tp1);
 	printf("TP2: %lf\n", marie.tp2);
 	printf("Intra: %lf\n", marie.intra);
-	printf("Final: %lf\n", marie.finale);
+	printf("Final: %lf\n", marie.finale);*/
+
+	etudiant_afficher(&marie);
+
+	printf("La note du finale: %.2lf\n", marie.finale);
 
 
-
+	jean.tp1 = 10; 
 
 	system("pause");
 	return EXIT_SUCCESS;
 }
+
+
+void etudiant_afficher(const t_etudiant* et)
+{
+	printf("**** FICHE DE L'ETUDIANT-E ****\n");
+	printf("Nom: %s\n", et->nom);
+	printf("Prenom: %s\n", et->prenom  );
+	printf("Code permanent: %s\n", et->code_perm);
+	printf("TP1: %lf\n", et->tp1);
+	printf("TP2: %lf\n", (*et).tp2);
+	printf("Intra: %lf\n", (*et).intra);
+	printf("Final: %lf\n", (*et).finale);
+	//Plus possible en raison du const
+	//(*et).finale = 0;
+}
+
+
+/*
+Écrire la fonction etudiant_saisir qui demande à l'usager de
+saisir la valeur de tous les champa d'un étudiant reçu en 
+paramètre.
+*/
+
+void etudiant_saisir(t_etudiant* et);
