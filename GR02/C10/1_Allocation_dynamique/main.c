@@ -23,6 +23,13 @@ int main(void)
 	scanf("%d", &taille);
 
 	foo = (int*)malloc(sizeof(int) * taille);
+	//Toujours verifier que le malloc a fonctionne!
+	if (foo == NULL)
+	{
+		printf("Desole, plus de memoire!\n");
+		exit(EXIT_FAILURE);
+	}
+
 
 	for (int i = 0; i < taille; i++)
 	{
@@ -45,8 +52,29 @@ int main(void)
 	par l'usager) et afficher la moyenne des notes. 
 	Utiliser un tableau dynamique de doubles.
 	*/
+	double* notes;
+	int nb_notes; 
+	double moyenne = 0;
+
+	printf("Combien de notes: ");
+	scanf("%d", &nb_notes);
+
+	notes = (double*)malloc(sizeof(double) * nb_notes);
+
+	for (int i = 0; i < nb_notes; i++)
+	{
+		printf("Saisir la note #%d: ", i);
+		scanf("%lf", &notes[i]);
+	}
+
+	for (int i = 0; i < nb_notes; i++)
+	{
+		moyenne += notes[i];
+	}
+	moyenne = moyenne / nb_notes; 
 
 
+	//foo = (int*)malloc(sizeof(int) * 4000000000000000);
 
 	/*
 	*(foo + 0) = 20;
