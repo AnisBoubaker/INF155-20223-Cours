@@ -62,6 +62,7 @@ void client_afficher(const t_client* le_client);
 
 int main(void)
 {
+	int a;
 	t_client un_client;
 
 	strcpy(un_client.num_ass_sociale,  "234 876 456");
