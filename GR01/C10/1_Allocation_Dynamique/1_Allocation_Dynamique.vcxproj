@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{8688C3A9-0A02-4C55-98D6-DDCA06E2F26D}</ProjectGuid>
-    <RootNamespace>My0ExerciceEnregistrements</RootNamespace>
+    <ProjectGuid>{121ACD6D-2F5B-4CBB-A972-5B4236BB821C}</ProjectGuid>
+    <RootNamespace>My1AllocationDynamique</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,7 +123,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
