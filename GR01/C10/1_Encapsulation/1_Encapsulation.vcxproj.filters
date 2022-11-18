@@ -18,5 +18,25 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mod_client.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mod_date.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mod_compte.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mod_client.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mod_date.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mod_compte.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
