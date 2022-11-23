@@ -24,19 +24,19 @@ int main(void)
 
 	//On commence par créer le compte avec init, puis on met
 	//son adresse dans le tableau de comptes bancaires du client.
-	liste_clients[0]->comptes_bancaires[0]=t_compte_bancaire_init();
+	client_ajouter_compte(liste_clients[0]);
 	strcpy(liste_clients[0]->comptes_bancaires[0]->numero_compte, "AB3456");
 	liste_clients[0]->comptes_bancaires[0]->solde_courant = 5600;
 	liste_clients[0]->comptes_bancaires[0]->taux_interets = 1.3;
 	liste_clients[0]->comptes_bancaires[0]->limite_decouvert = 2000;
-	liste_clients[0]->nb_comptes++;
+	//liste_clients[0]->nb_comptes++;
 
-	liste_clients[0]->comptes_bancaires[1] = t_compte_bancaire_init();
+	client_ajouter_compte(liste_clients[0]);
 	strcpy(liste_clients[0]->comptes_bancaires[1]->numero_compte, "AB3434");
 	liste_clients[0]->comptes_bancaires[1]->solde_courant = 155.50;
 	liste_clients[0]->comptes_bancaires[1]->taux_interets = 0.6;
 	liste_clients[0]->comptes_bancaires[1]->limite_decouvert = 0;
-	liste_clients[0]->nb_comptes++;
+	//liste_clients[0]->nb_comptes++;
 
 	client_afficher(liste_clients[0]);
 

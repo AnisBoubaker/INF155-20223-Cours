@@ -43,4 +43,6 @@ Description de la fonction afficher...
 void client_afficher(const t_client* le_client);
 
 
+void client_ajouter_compte(t_client* le_client);
+
 #endif

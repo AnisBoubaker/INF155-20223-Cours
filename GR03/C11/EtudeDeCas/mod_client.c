@@ -33,7 +33,7 @@ t_client* client_init(const char* nom, const char* prenom)
 	strcpy(nouveau_client->prenom, prenom);
 
 
-	nouveau_client->comptes_bancaires =
+	/*nouveau_client->comptes_bancaires =
 		(t_compte_bancaire**)malloc(sizeof(t_compte_bancaire*) * NB_MAX_COMPTES);
 	if (nouveau_client->comptes_bancaires == NULL)
 	{
@@ -42,13 +42,56 @@ t_client* client_init(const char* nom, const char* prenom)
 		free(nouveau_client);
 		printf("Erreur memoire.");
 		exit(EXIT_FAILURE);
-	}
+	}*/
+	nouveau_client->comptes_bancaires = NULL;
 
 
 	nouveau_client->nb_comptes = 0;
 
 	return nouveau_client;
 }
+
+void client_ajouter_compte(t_client* le_client)
+{
+	t_compte_bancaire** nouvelle_adresse; 
+
+
+	le_client->nb_comptes++;
+
+	if (le_client->comptes_bancaires != NULL)
+	{
+	
+		/*le_client->comptes_bancaires =
+			(t_compte_bancaire**)malloc(sizeof(t_compte_bancaire) *
+				le_client->nb_comptes) ;*/
+		nouvelle_adresse =
+			realloc(le_client->comptes_bancaires,
+				sizeof(t_compte_bancaire*) * le_client->nb_comptes);
+		if (nouvelle_adresse == NULL)
+		{
+			printf("Plue de memoire!\n");
+			exit(EXIT_FAILURE);
+		}
+
+		le_client->comptes_bancaires = nouvelle_adresse;
+	} 
+	else
+	{
+		le_client->comptes_bancaires =
+			(t_compte_bancaire**)malloc(sizeof(t_compte_bancaire*)
+				* le_client->nb_comptes);
+		if (le_client->comptes_bancaires == NULL)
+		{
+			printf("Plue de memoire!\n");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	le_client->comptes_bancaires[le_client->nb_comptes - 1] =
+		t_compte_bancaire_init();
+
+}
+
 
 
 void client_destroy(t_client* le_client)
