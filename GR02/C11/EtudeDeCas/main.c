@@ -37,6 +37,9 @@ int main(void)
 	client_afficher(liste_clients[0]);
 
 
+	client_destroy(liste_clients[0]);
+
+
 	system("pause");
 	return EXIT_SUCCESS;
 }

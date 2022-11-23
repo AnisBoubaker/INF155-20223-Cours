@@ -28,6 +28,11 @@ et retourne l'adresse de l'espace alloué.
 */
 t_client* client_init(char* nom, char* prenom);
 
+/*
+Libère l'espace mémoire alloué dynamiquement pour un client.
+*/
+void client_destroy(t_client* le_client);
+
 
 /*
 Description de la fonction

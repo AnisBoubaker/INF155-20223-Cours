@@ -39,6 +39,14 @@ t_client* client_init(char* nom, char* prenom)
 	return nouv_client;
 }
 
+void client_destroy(t_client* le_client)
+{
+	free(le_client->nom);
+	free(le_client->prenom);
+	free(le_client);
+}
+
+
 void client_afficher(const t_client* le_client)
 {
 	printf("FICHE DU CLIENT: \n------------------\n");
