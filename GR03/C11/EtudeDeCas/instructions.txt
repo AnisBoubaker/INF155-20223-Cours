@@ -10,7 +10,7 @@ dynamiquement. Modifier l'enregistrement client en conséquence.
 3. Modifier le main du programme pour qu'il contienne un tableau de clients alloués 
 dynamiquement. On supposera qu'on n'aura jamais plus de 1000 clients. 
 
-4. Modifier l'enregistrement d'un client pour que le tableau de compte soit un 
+4. Modifier l'enregistrement d'un client pour que le tableau de comptes soit un 
 tableau de références vers des comptes et non un tableau de comptes. 
 Modifier le programme en conséquence.
 

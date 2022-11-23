@@ -32,6 +32,19 @@ t_client* client_init(const char* nom, const char* prenom)
 	}
 	strcpy(nouveau_client->prenom, prenom);
 
+
+	nouveau_client->comptes_bancaires =
+		(t_compte_bancaire**)malloc(sizeof(t_compte_bancaire*) * NB_MAX_COMPTES);
+	if (nouveau_client->comptes_bancaires == NULL)
+	{
+		free(nouveau_client->nom);
+		free(nouveau_client->prenom);
+		free(nouveau_client);
+		printf("Erreur memoire.");
+		exit(EXIT_FAILURE);
+	}
+
+
 	nouveau_client->nb_comptes = 0;
 
 	return nouveau_client;
@@ -42,6 +55,14 @@ void client_destroy(t_client* le_client)
 {
 	free(le_client->nom);
 	free(le_client->prenom);
+	//Libérer chacun des comptes individuellement avant 
+	//de libérer le tableau de de comptes.
+	for (int i = 0; i < le_client->nb_comptes; i++)
+	{
+		//free(le_client->comptes_bancaires[i]);
+		t_compte_bancaire_destroy(le_client->comptes_bancaires[i]);
+	}
+	free(le_client->comptes_bancaires);
 	free(le_client);
 }
 
@@ -57,10 +78,10 @@ void client_afficher(const t_client* le_client)
 	printf("Liste des comptes bancaires: \n");
 	for (int i = 0; i < le_client->nb_comptes; i++)
 	{
-		printf("\tCompte Num: %s\n", le_client->comptes_bancaires[i].numero_compte);
-		printf("\tSolde: %.2lf $\n", le_client->comptes_bancaires[i].solde_courant);
-		printf("\tLimite de decouvert: %.2lf $\n", le_client->comptes_bancaires[i].limite_decouvert);
-		printf("\tTaux d'interets: %.2lf %%\n", le_client->comptes_bancaires[i].taux_interets);
+		printf("\tCompte Num: %s\n", le_client->comptes_bancaires[i]->numero_compte);
+		printf("\tSolde: %.2lf $\n", le_client->comptes_bancaires[i]->solde_courant);
+		printf("\tLimite de decouvert: %.2lf $\n", le_client->comptes_bancaires[i]->limite_decouvert);
+		printf("\tTaux d'interets: %.2lf %%\n", le_client->comptes_bancaires[i]->taux_interets);
 		printf("\t==============================\n");
 	}
 }

@@ -21,3 +21,9 @@ t_compte_bancaire* t_compte_bancaire_init(void)
 
 	return nouv_compte;
 }
+
+
+void t_compte_bancaire_destroy(t_compte_bancaire* le_compte)
+{
+	free(le_compte);
+}

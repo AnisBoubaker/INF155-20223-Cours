@@ -19,7 +19,9 @@ typedef struct client
 	char* nom;
 	char* prenom;
 	t_date date_naissance;
-	t_compte_bancaire comptes_bancaires[NB_MAX_COMPTES];
+	//t_compte_bancaire* comptes_bancaires[NB_MAX_COMPTES];
+	t_compte_bancaire** comptes_bancaires;  //Tab dynamique 1D de reférences 
+											//vers des t_compte_bancaire
 	int nb_comptes;
 } t_client;
 
@@ -28,6 +30,12 @@ Fonction constructeur d'un client : Alloue dynamiquement un client
 et retourne son adresse. 
 */
 t_client* client_init(const char* nom, const char* prenom);
+
+
+/*
+Libère l'espace mémoire occupé par le client le_client
+*/
+void client_destroy(t_client* le_client);
 
 /*
 Description de la fonction afficher...

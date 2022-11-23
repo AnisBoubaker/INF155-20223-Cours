@@ -14,4 +14,8 @@ typedef struct compte_bancaire
 
 t_compte_bancaire* t_compte_bancaire_init(void);
 
+
+void t_compte_bancaire_destroy(t_compte_bancaire* le_compte);
+
+
 #endif
