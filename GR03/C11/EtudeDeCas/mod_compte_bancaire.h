@@ -2,6 +2,7 @@
 #define MOD_COMPTE_BANCAIRE__H_
 
 #define TAILLE_NUM_COMPTE 20
+#include <stdlib.h>
 
 typedef struct compte_bancaire
 {
@@ -11,6 +12,6 @@ typedef struct compte_bancaire
 	double taux_interets;
 } t_compte_bancaire;
 
-
+t_compte_bancaire* t_compte_bancaire_init(void);
 
 #endif

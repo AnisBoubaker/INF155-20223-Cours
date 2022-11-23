@@ -1,8 +1,10 @@
 #ifndef MOD_CLIENT__H_
 #define MOD_CLIENT__H_
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "mod_date.h"
 #include "mod_compte_bancaire.h"
 
@@ -14,8 +16,8 @@
 typedef struct client
 {
 	char num_ass_sociale[TAILLE_NUM_ASS_SOCIALE];
-	char nom[TAILLE_MAX_NOM];
-	char prenom[TAILLE_MAX_NOM];
+	char* nom;
+	char* prenom;
 	t_date date_naissance;
 	t_compte_bancaire comptes_bancaires[NB_MAX_COMPTES];
 	int nb_comptes;
@@ -25,7 +27,7 @@ typedef struct client
 Fonction constructeur d'un client : Alloue dynamiquement un client
 et retourne son adresse. 
 */
-t_client* client_init(void);
+t_client* client_init(const char* nom, const char* prenom);
 
 /*
 Description de la fonction afficher...

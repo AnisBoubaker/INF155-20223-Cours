@@ -133,6 +133,9 @@
     <ClInclude Include="mod_compte_bancaire.h" />
     <ClInclude Include="mod_date.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="instructions.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

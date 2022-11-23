@@ -1,7 +1,7 @@
 #include "mod_client.h"
 
 
-t_client* client_init(void)
+t_client* client_init(const char* nom, const char* prenom)
 {
 	t_client* nouveau_client; 
 
@@ -12,11 +12,38 @@ t_client* client_init(void)
 		exit(EXIT_FAILURE);
 	}
 
+	//Allouer l'espace pour le nom: 
+	nouveau_client->nom = (char*)malloc(sizeof(char) * (strlen(nom) + 1));
+	if (nouveau_client->nom == NULL)
+	{
+		free(nouveau_client);
+		printf("Erreur: Plus de memoire. ");
+		exit(EXIT_FAILURE);
+	}
+	strcpy(nouveau_client->nom, nom);
+
+	nouveau_client->prenom = (char*)malloc(sizeof(char) * (strlen(prenom) + 1));
+	if (nouveau_client->prenom == NULL)
+	{
+		free(nouveau_client->nom);
+		free(nouveau_client);
+		printf("Erreur memoire.");
+		exit(EXIT_FAILURE);
+	}
+	strcpy(nouveau_client->prenom, prenom);
+
 	nouveau_client->nb_comptes = 0;
 
 	return nouveau_client;
 }
 
+
+void client_destroy(t_client* le_client)
+{
+	free(le_client->nom);
+	free(le_client->prenom);
+	free(le_client);
+}
 
 void client_afficher(const t_client* le_client)
 {

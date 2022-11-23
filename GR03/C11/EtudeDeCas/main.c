@@ -10,13 +10,13 @@ int main(void)
 	t_client* un_client;
 
 
-	un_client = client_init();
+	un_client = client_init("Valjean", "Jean");
 	
 
 	//Affecte la valeur "345 567 876" à la chaine de caractères num_ass_sociale
 	strcpy(un_client->num_ass_sociale, "345 567 876");
-	strcpy(un_client->nom, "Valjean");
-	strcpy(un_client->prenom, "Jean");
+	//strcpy(un_client->nom, "Valjean");
+	//strcpy(un_client->prenom, "Jean");
 	//Date de naissance: 20-10-1567
 	un_client->date_naissance.jour = 20;
 	un_client->date_naissance.mois = 10;

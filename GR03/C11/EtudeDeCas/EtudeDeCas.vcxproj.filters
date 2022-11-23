@@ -39,4 +39,7 @@
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="instructions.txt" />
+  </ItemGroup>
 </Project>
