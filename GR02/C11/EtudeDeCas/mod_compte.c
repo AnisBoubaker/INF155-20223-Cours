@@ -16,3 +16,8 @@ t_compte* compte_init(void)
 	return nouv_compte;
 
 }
+
+void compte_destroy(t_compte* le_compte)
+{
+	free(le_compte);
+}

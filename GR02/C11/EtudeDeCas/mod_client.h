@@ -18,7 +18,12 @@ typedef struct client {
 	char* nom;
 	char* prenom;
 	t_date date_naissance;
-	t_compte comptes[NB_MAX_COMPTES];
+
+	t_compte comptes[NB_MAX_COMPTES]; 
+
+
+	t_compte** comptes; //Tableau 1D dynamique contenant 
+						//des t_compte*
 	int nb_comptes;
 } t_client;
 
@@ -38,6 +43,11 @@ void client_destroy(t_client* le_client);
 Description de la fonction
 */
 void client_afficher(const t_client* le_client);
+
+
+void client_ajouter_compte(t_client* le_client);
+
+void client_supprimer_compte(t_client* le_client, int indice_compte);
 
 
 
