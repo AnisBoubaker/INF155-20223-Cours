@@ -123,6 +123,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="main.c" />
+    <ClCompile Include="mod_client.c" />
+    <ClCompile Include="mod_compte.c" />
+    <ClCompile Include="mod_date.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="mod_client.h" />
+    <ClInclude Include="mod_compte.h" />
+    <ClInclude Include="mod_date.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="instructions.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

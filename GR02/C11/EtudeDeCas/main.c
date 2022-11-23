@@ -6,38 +6,35 @@
 
 int main(void)
 {
-	int a;
-	t_client* un_client;
+	t_client* liste_clients[1000];
 
+	liste_clients[0] = client_init("Valjean", "Jean");
 
-	un_client = client_init();
-
-	strcpy(un_client->num_ass_sociale, "234 876 456");
-	strcpy(un_client->prenom, "Jean");
-	strcpy(un_client->nom, "Valjean");
+	strcpy(liste_clients[0]->num_ass_sociale, "234 876 456");
+	
 	//5-2-1564
-	un_client->date_naissance.jour = 5;
-	un_client->date_naissance.mois = 2;
-	un_client->date_naissance.annee = 1564;
+	liste_clients[0]->date_naissance.jour = 5;
+	liste_clients[0]->date_naissance.mois = 2;
+	liste_clients[0]->date_naissance.annee = 1564;
 
-	un_client->nb_comptes = 0;
+	liste_clients[0]->nb_comptes = 0;
 
-	strcpy(un_client->comptes[0].numero, "AB4567");
-	un_client->comptes[0].solde_courant = 5000;
-	un_client->comptes[0].limite_decouvert = 1500;
-	un_client->comptes[0].taux_interet = 1.5;
+	strcpy(liste_clients[0]->comptes[0].numero, "AB4567");
+	liste_clients[0]->comptes[0].solde_courant = 5000;
+	liste_clients[0]->comptes[0].limite_decouvert = 1500;
+	liste_clients[0]->comptes[0].taux_interet = 1.5;
 
-	un_client->nb_comptes++;
+	liste_clients[0]->nb_comptes++;
 
-	strcpy(un_client->comptes[1].numero, "FC8765");
-	un_client->comptes[1].solde_courant = 1500;
-	un_client->comptes[1].limite_decouvert = 0;
-	un_client->comptes[1].taux_interet = 0.3;
+	strcpy(liste_clients[0]->comptes[1].numero, "FC8765");
+	liste_clients[0]->comptes[1].solde_courant = 1500;
+	liste_clients[0]->comptes[1].limite_decouvert = 0;
+	liste_clients[0]->comptes[1].taux_interet = 0.3;
 
-	un_client->nb_comptes++;
+	liste_clients[0]->nb_comptes++;
 
 
-	client_afficher(un_client);
+	client_afficher(liste_clients[0]);
 
 
 	system("pause");

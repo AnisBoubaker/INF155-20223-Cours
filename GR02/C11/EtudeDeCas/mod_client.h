@@ -2,8 +2,10 @@
 #ifndef MOD_CLIENT__H_
 #define MOD_CLIENT__H_
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "mod_date.h"
 #include "mod_compte.h"
 
@@ -12,9 +14,9 @@
 #define NB_MAX_COMPTES 10
 
 typedef struct client {
-	char num_ass_sociale[15]; //567 787 909
-	char nom[TAILLE_MAX_NOM];
-	char prenom[TAILLE_MAX_NOM];
+	char num_ass_sociale[TAILLE_MAX_ASS_SOCIALE]; //567 787 909
+	char* nom;
+	char* prenom;
 	t_date date_naissance;
 	t_compte comptes[NB_MAX_COMPTES];
 	int nb_comptes;
@@ -24,7 +26,7 @@ typedef struct client {
 Fonction constructeur d'un client: alloue un espace mémoire pour un client
 et retourne l'adresse de l'espace alloué. 
 */
-t_client* client_init(void);
+t_client* client_init(char* nom, char* prenom);
 
 
 /*
