@@ -1,7 +1,9 @@
 #include "mod_client.h"
 
 
-t_client* client_init(const char* nom, const char* prenom)
+t_client* client_init(const char* num_ass_sociale, 
+	const char* nom, 
+	const char* prenom)
 {
 	t_client* nouv_client;
 
@@ -31,7 +33,11 @@ t_client* client_init(const char* nom, const char* prenom)
 	}
 	strcpy(nouv_client->prenom, prenom);
 
-	strcpy(nouv_client->num_ass_sociale, "");
+	//NOTE: Le numero d'assurance sociale est défini
+	//comme un tableau statique dans la structure t_client.
+	//Il ne faut donc pas l'allouer avec un malloc!
+
+	strcpy(nouv_client->num_ass_sociale, num_ass_sociale);
 	nouv_client->date_naiss.jour = 0;
 	nouv_client->date_naiss.mois = 0;
 	nouv_client->date_naiss.annee = 0;
@@ -40,6 +46,13 @@ t_client* client_init(const char* nom, const char* prenom)
 	return nouv_client;
 }
 
+
+void client_destroy(t_client* le_client)
+{
+	free(le_client->nom);
+	free(le_client->prenom);
+	free(le_client);
+}
 
 
 void client_afficher(const t_client* client)

@@ -29,6 +29,11 @@ t_client* client_init(const char* num_ass_sociale,
 	const char* nom, 
 	const char* prenom);
 
+/*
+Fonction destructeur d'un client: 
+libère l'intégralité de la mémoire occupée par un client donné. 
+*/
+void client_destroy(t_client* le_client);
 
 
 #endif
