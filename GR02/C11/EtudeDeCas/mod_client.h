@@ -18,10 +18,6 @@ typedef struct client {
 	char* nom;
 	char* prenom;
 	t_date date_naissance;
-
-	t_compte comptes[NB_MAX_COMPTES]; 
-
-
 	t_compte** comptes; //Tableau 1D dynamique contenant 
 						//des t_compte*
 	int nb_comptes;
