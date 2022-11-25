@@ -1,6 +1,8 @@
 #ifndef MOD_COMPTE__H_
 #define MOD_COMPTE__H_
 
+#include <stdlib.h>
+
 #define TAILLE_MAX_ID 20
 typedef struct compte
 {
@@ -11,5 +13,6 @@ typedef struct compte
 } t_compte;
 
 
+t_compte* compte_init(void);
 
 #endif

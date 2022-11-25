@@ -1,7 +1,7 @@
 #include "mod_client.h"
 
 
-t_client* client_init(void)
+t_client* client_init(const char* nom, const char* prenom)
 {
 	t_client* nouv_client;
 
@@ -12,9 +12,26 @@ t_client* client_init(void)
 		exit(EXIT_FAILURE);
 	}
 
+	nouv_client->nom = (char*)malloc(sizeof(char) * (strlen(nom) + 1));
+	if (nouv_client->nom == NULL)
+	{
+		free(nouv_client);
+		printf("ERREUR: Plus de memoire!\n");
+		exit(EXIT_FAILURE);
+	}
+	strcpy(nouv_client->nom, nom);
+
+	nouv_client->prenom = (char*)malloc(sizeof(char) * (strlen(prenom) + 1));
+	if (nouv_client->prenom == NULL)
+	{
+		free(nouv_client->nom);
+		free(nouv_client);
+		printf("ERREUR: Plus de memoire!\n");
+		exit(EXIT_FAILURE);
+	}
+	strcpy(nouv_client->prenom, prenom);
+
 	strcpy(nouv_client->num_ass_sociale, "");
-	strcpy(nouv_client->nom, "");
-	strcpy(nouv_client->prenom, "");	
 	nouv_client->date_naiss.jour = 0;
 	nouv_client->date_naiss.mois = 0;
 	nouv_client->date_naiss.annee = 0;

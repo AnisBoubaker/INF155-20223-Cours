@@ -10,12 +10,10 @@ int main(void)
 {
 	t_client* un_client = NULL;
 
-	un_client = client_init();
+	un_client = client_init("Laporte", "Jean");
 
 
 	strcpy(un_client->num_ass_sociale, "345 673 123");
-	strcpy(un_client->nom, "Valjean");
-	strcpy(un_client->prenom, "Jean");
 	// 10/05/1562
 	un_client->date_naiss.jour = 10;
 	un_client->date_naiss.mois = 5;

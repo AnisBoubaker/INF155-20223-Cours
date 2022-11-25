@@ -15,17 +15,19 @@
 typedef struct client
 {
 	char num_ass_sociale[TAILLE_MAX_ASS_SOCIALE];
-	char nom[TAILLE_MAX_NOM];
-	char prenom[TAILLE_MAX_NOM];
+	char* nom;
+	char* prenom;
 	t_date date_naiss;
-	t_compte comptes[NB_MAX_COMPTES];
 	int nb_comptes;
+	t_compte comptes[NB_MAX_COMPTES];
 } t_client;
 
 
 void client_afficher(const t_client* client);
 
-t_client* client_init(void);
+t_client* client_init(const char* num_ass_sociale,
+	const char* nom, 
+	const char* prenom);
 
 
 
