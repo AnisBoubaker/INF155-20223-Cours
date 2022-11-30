@@ -23,6 +23,14 @@ t_capteur* capteur_init(char* ville, double lat, double longi)
 
 	return nouv_capteur;
 }
+
+void capteur_destroy(t_capteur* le_capteur)
+{
+	free(le_capteur->ville);
+	free(le_capteur);
+}
+
+
 //
 //void* mon_malloc(taille)
 //{
