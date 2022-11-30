@@ -21,19 +21,22 @@ int main(void)
 
 	liste_clients[0]->nb_comptes = 0;
 
-	strcpy(liste_clients[0]->comptes[0].identifiant, "AB5676");
-	liste_clients[0]->comptes[0].solde = 2000;
-	liste_clients[0]->comptes[0].limite_decouvert = 1500;
-	liste_clients[0]->comptes[0].taux_interets = 1.5;
+	client_ajouter_compte(liste_clients[0]);
+	strcpy(liste_clients[0]->comptes[0]->identifiant, "AB5676");
+	liste_clients[0]->comptes[0]->solde = 2000;
+	liste_clients[0]->comptes[0]->limite_decouvert = 1500;
+	liste_clients[0]->comptes[0]->taux_interets = 1.5;
 
-	liste_clients[0]->nb_comptes++;
+	client_ajouter_compte(liste_clients[0]);
+	liste_clients[0]->comptes[1] = compte_init();
+	strcpy(liste_clients[0]->comptes[1]->identifiant, "DF6789");
+	liste_clients[0]->comptes[1]->solde = 150;
+	liste_clients[0]->comptes[1]->limite_decouvert = 0;
+	liste_clients[0]->comptes[1]->taux_interets = 0.4;
 
-	strcpy(liste_clients[0]->comptes[1].identifiant, "DF6789");
-	liste_clients[0]->comptes[1].solde = 150;
-	liste_clients[0]->comptes[1].limite_decouvert = 0;
-	liste_clients[0]->comptes[1].taux_interets = 0.4;
+	client_afficher(liste_clients[0]);
 
-	liste_clients[0]->nb_comptes++;
+	client_supprimer_compte(liste_clients[0], 0);
 
 	client_afficher(liste_clients[0]);
 

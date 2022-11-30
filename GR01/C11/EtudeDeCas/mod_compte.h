@@ -15,4 +15,6 @@ typedef struct compte
 
 t_compte* compte_init(void);
 
+void compte_destroy(t_compte* le_compte);
+
 #endif
