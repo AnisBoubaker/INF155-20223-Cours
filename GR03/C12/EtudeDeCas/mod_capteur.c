@@ -1,6 +1,6 @@
 #include "mod_capteur.h"
 
-t_capteur* capteur_init(const char* ville, double latitude, double longitude)
+t_capteur* capteur_init(const char* ville, double latitude, double longitude, int nb_max_jours_mesures)
 {
 	t_capteur* nouv_capteur; 
 
@@ -16,6 +16,13 @@ t_capteur* capteur_init(const char* ville, double latitude, double longitude)
 		free(nouv_capteur);
 		exit(EXIT_FAILURE);
 	}
+
+	/*
+	Créer le tableau 2D de t_mesure, en stockant l'adresse 
+	dans nouv_capteur->mesures
+	Le nombre de lignes est de nb_max_jours_mesures (reçu en paramètre)
+	Le nombre de colonnes est de NB_MAX_MESURES_PAR_JOUR
+	*/
 
 
 	nouv_capteur->latitude = latitude;

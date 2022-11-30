@@ -54,6 +54,7 @@ int main(void)
 		printf("\n");
 	}
 
+	destroy_tab2d_int(tab, 3);
 
 	system("pause");
 	return EXIT_SUCCESS;
