@@ -1,7 +1,6 @@
 #include "mod_capteur.h"
 
-
-t_capteur* capteur_init(char* ville, double lat, double longi)
+t_capteur* capteur_init(char* ville, double lat, double longi, int max_jours)
 {
 	t_capteur* nouv_capteur; 
 
@@ -17,6 +16,10 @@ t_capteur* capteur_init(char* ville, double lat, double longi)
 		free(nouv_capteur);
 		exit(EXIT_FAILURE);
 	}
+
+	/*
+	FAIRE L'ALLOCATION DU TABLEAU 2D mesures
+	*/
 
 	nouv_capteur->latitude = lat;
 	nouv_capteur->longitude = longi;

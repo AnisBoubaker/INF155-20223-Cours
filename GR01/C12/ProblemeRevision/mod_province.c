@@ -32,3 +32,14 @@ t_province* province_init(const char* nom, int max_capteurs)
 	
 	return nouv_prov;
 }
+
+void province_destroy(t_province* la_province)
+{
+	free(la_province->nom);
+	for (int i = 0; i < la_province->nb_capteurs; i++)
+	{
+		capteur_destroy(la_province->capteurs[i]);
+	}
+	free(la_province->capteurs);
+	free(la_province);
+}
