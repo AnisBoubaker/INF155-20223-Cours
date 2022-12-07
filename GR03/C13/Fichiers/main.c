@@ -51,7 +51,7 @@ int main(void)
 
 	fclose(mon_fichier);
 
-	mon_fichier = fopen("exemple_de_texte.txt", "a");
+	mon_fichier = fopen("C:\\Users\\anis\\Desktop\\exemple_de_texte.txt", "a");
 
 	int jour = 7;
 	int annee = 2022;
